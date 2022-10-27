@@ -1,0 +1,29 @@
+GET  http://localhost:4004/teams/Departaments
+###
+GET  http://localhost:4004/teams/Employees
+###
+GET  http://localhost:4004/teams/Departaments?$expand=employees
+###
+GET  http://localhost:4004/teams/Roles
+###
+GET  http://localhost:4004/costs/Costs
+###
+POST http://localhost:4004/teams/Departaments
+Content-Type: application/json
+
+{"name": "Board", "numOfEmployees":0, "employeesSalary":0, "otherCosts":0}
+###
+POST http://localhost:4004/teams/Employees
+Content-Type: application/json
+
+{"firstName": "Konrad", "lastName": "Klik", "departament_name": "Board", "role_name": "Owner", "salary": "9001"}
+###
+POST http://localhost:4004/teams/Roles
+Content-Type: application/json
+
+{"name" : "Owner", "departament_name": "Board"}
+###
+POST http://localhost:4004/costs/Costs
+Content-Type: application/json
+
+{"name": "Gmail", "departament_name": "IT", "budget":2000}
